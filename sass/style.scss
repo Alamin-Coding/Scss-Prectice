@@ -1,0 +1,70 @@
+@import "var";
+@import "mixin";
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: 0;
+}
+ol,ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+h1,h2,h3,h4,h5,h6,p{
+    padding: 0;
+    margin: 0;
+}
+section{
+    width: 100%;
+}
+.container{
+    width: 1170px;
+    margin: 0 auto;
+}
+/* ===================
+All Common Css End
+===================== */
+
+section{
+    background: $bg_color;
+}
+.main{
+     width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1{
+        color: $heading_color;
+        font-size: 40px;
+        display: inline-block;
+        position: relative;
+        &:hover{
+            color: $hover_color;
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            width: 200px;
+            height: 2px;
+            background: $hover_color;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            -o-transform: translateX(-50%);
+}
+    }
+    p{
+       @include common_code(#fff, uppercase );
+    }
+    p.small{
+        @include common_code($pera_color, capitalize );
+    }
+}
